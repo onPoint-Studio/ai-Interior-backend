@@ -1,0 +1,117 @@
+# ─── Python ───────────────────────────────────────────────────────────────────
+
+# байт-коди та оптимізовані файли
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C-розширення
+*.so
+
+# середовища
+.env
+.venv/
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+pip-wheel-metadata/
+
+# логи та тимчасові файли
+pip-log.txt
+pip-delete-this-directory.txt
+*.log
+*.tmp
+
+# тестування і звіти
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+.pytest_cache/
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+
+# документація Sphinx
+docs/_build/
+
+# Jupyter
+.ipynb_checkpoints
+
+# mypy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# pytest
+.pytest_cache/
+
+# Pyre
+.pyre/
+
+# ─── Django ───────────────────────────────────────────────────────────────────
+
+# налаштування та БД
+db.sqlite3
+local_settings.py
+
+# медіа-файли (якщо ви їх не зберігаєте в репо)
+media/
+
+# статичні файли (якщо ви їх генеруєте локально)
+staticfiles/
+
+# celery
+celerybeat-schedule
+
+# ─── IDE та редактори ───────────────────────────────────────────────────────────
+
+# PyCharm
+.idea/
+*.iml
+
+# VS Code
+.vscode/
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Spyder
+.spyderproject
+.spyproject
+
+# Rope
+.ropeproject
+
+# ─── Операційні системи ────────────────────────────────────────────────────────
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+ehthumbs.db
