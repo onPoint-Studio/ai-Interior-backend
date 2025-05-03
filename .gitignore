@@ -1,14 +1,8 @@
-# ─── Python ───────────────────────────────────────────────────────────────────
-
-# байт-коди та оптимізовані файли
 __pycache__/
 *.py[cod]
 *$py.class
-
-# C-розширення
 *.so
 
-# середовища
 .env
 .venv/
 env/
@@ -35,13 +29,11 @@ var/
 *.egg
 pip-wheel-metadata/
 
-# логи та тимчасові файли
 pip-log.txt
 pip-delete-this-directory.txt
 *.log
 *.tmp
 
-# тестування і звіти
 htmlcov/
 .tox/
 .nox/
@@ -54,8 +46,6 @@ coverage.xml
 *.cover
 *.py,cover
 .hypothesis/
-
-# документація Sphinx
 docs/_build/
 
 # Jupyter
@@ -66,28 +56,21 @@ docs/_build/
 .dmypy.json
 dmypy.json
 
-# pytest
-.pytest_cache/
 
-# Pyre
 .pyre/
 
 # ─── Django ───────────────────────────────────────────────────────────────────
 
-# налаштування та БД
 db.sqlite3
 local_settings.py
 
-# медіа-файли (якщо ви їх не зберігаєте в репо)
 media/
 
-# статичні файли (якщо ви їх генеруєте локально)
 staticfiles/
 
 # celery
 celerybeat-schedule
 
-# ─── IDE та редактори ───────────────────────────────────────────────────────────
 
 # PyCharm
 .idea/
@@ -107,7 +90,6 @@ celerybeat-schedule
 # Rope
 .ropeproject
 
-# ─── Операційні системи ────────────────────────────────────────────────────────
 
 # macOS
 .DS_Store
