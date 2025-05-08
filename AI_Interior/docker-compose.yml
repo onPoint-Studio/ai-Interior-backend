@@ -1,0 +1,41 @@
+version: '3.9'
+
+services:
+  web:
+    image: python:3.13
+    container_name: ai_interior_web
+    command: >
+      sh -c "pip install -r requirements.txt && python manage.py runserver 0.0.0.0:8000"
+    working_dir: /app
+    volumes:
+      - .:/app
+    ports:
+      - '8000:8000'
+    env_file:
+      - .env
+    depends_on:
+      - redis
+
+  celery:
+    image: python:3.13
+    container_name: ai_interior_celery
+    command: >
+      sh -c "pip install -r requirements.txt && celery -A AI_Interior worker --loglevel=info -P solo"
+    working_dir: /app
+    volumes:
+      - .:/app
+    env_file:
+      - .env
+    depends_on:
+      - redis
+
+  redis:
+    image: redis:7-alpine
+    container_name: ai_interior_redis
+    ports:
+      - '6379:6379'
+    volumes:
+      - redis_data:/data
+
+volumes:
+  redis_data:
