@@ -1,18 +1,20 @@
 import requests
+import os
 
-API_URL = 'https://www.decoratly.com/api/interior'
+API_URL = os.getenv("API_URL")
+
 HEADERS = {
-    'Accept': '*/*',
-    'Content-Type': 'application/json',
-    'Origin': 'https://www.decoratly.com',
-    'Referer': 'https://www.decoratly.com/photos/rGHu9RVxBBXiCMQBCKYA',
-    'User-Agent': 'Mozilla/5.0'
+    'Accept': os.getenv("API_ACCEPT", "*/*"),
+    'Content-Type': os.getenv("API_CONTENT_TYPE", "application/json"),
+    'Origin': os.getenv("API_ORIGIN"),
+    'Referer': os.getenv("API_REFERER"),
+    'User-Agent': os.getenv("API_USER_AGENT", "Mozilla/5.0")
 }
 
 def build_payload(image_url, prompt):
     return {
         'image':    image_url,
-        'version':  'black-forest-labs/flux-canny-pro',
+        'version':  'black-forest-labs/flux-1.1-pro',
         'prompt':   prompt,
         'guidance': 25,
         'steps':    28,

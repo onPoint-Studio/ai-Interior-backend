@@ -5,7 +5,9 @@ services:
     image: python:3.13
     container_name: ai_interior_web
     command: >
-      sh -c "pip install -r requirements.txt && python manage.py runserver 0.0.0.0:8000"
+      sh -c "pip install -r requirements.txt &&
+             python manage.py migrate &&
+             python manage.py runserver 0.0.0.0:8000"
     working_dir: /app
     volumes:
       - .:/app
@@ -37,5 +39,21 @@ services:
     volumes:
       - redis_data:/data
 
+  db:
+    image: postgres:14
+    container_name: ai_interior_db
+    restart: always
+    env_file:
+      - .env
+    environment:
+      POSTGRES_DB: ${DB_NAME}
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
 volumes:
   redis_data:
+  postgres_data:
